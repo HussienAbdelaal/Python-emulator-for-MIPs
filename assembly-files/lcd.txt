@@ -1,0 +1,292 @@
+; storing the commands
+;---------------------
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0038		; 38 --> command for initializing the LCD in 8-bit mode
+sw   r3, r1, 0			; store 38 in memory address of offset 0 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x000E		; 0E --> command for dispaly on cursor on
+sw   r3, r1, 1			; store 0E in memory address of offset 1 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0001		; 01 --> command for clearing display
+sw   r3, r1, 2			; store 01 in memory address of offset 2 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0002		; 02 --> command for returning home
+sw   r3, r1, 3			; store 02 in memory address of offset 3 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0006		; 06 --> command for shifting cursor right
+sw   r3, r1, 4			; store 06 in memory address of offset 4 + r1
+
+
+; starting the word from offset 5
+;----------------------------------:
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x8045		; 45 --> character 'E' and set the most signficant bit for the RS pin
+sw   r3, r1, 5			; store 'E' in memory address of offset 5 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0006		; 06 --> command for shifting cursor right
+sw   r3, r1, 6			; store 06 in memory address of offset 6 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x804E		; 4E --> character 'N' and set the most signficant bit for the RS pin
+sw   r3, r1, 7			; store 'N' in memory address of offset 7 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0006		; 06 --> command for shifting cursor right
+sw   r3, r1, 8			; store 06 in memory address of offset 8 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x8054		; 54 --> character 'T' and set the most signficant bit for the RS pin
+sw   r3, r1, 9			; store 'T' in memory address of offset 9 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0006		; 06 --> command for shifting cursor right
+sw   r3, r1, 10			; store 06 in memory address of offset 10 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x8045		; 45 --> character 'E' and set the most signficant bit for the RS pin
+sw   r3, r1, 11			; store 'E' in memory address of offset 11 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0006		; 06 --> command for shifting cursor right
+sw   r3, r1, 12			; store 06 in memory address of offset 12 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x8052		; 52 --> character 'R' and set the most signficant bit for the RS pin
+sw   r3, r1, 13			; store 'R' in memory address of offset 13 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0006		; 06 --> command for shifting cursor right
+sw   r3, r1, 14			; store 06 in memory address of offset 14 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x8020		; 20 --> character ' ' and set the most signficant bit for the RS pin
+sw   r3, r1, 15			; store ' ' in memory address of offset 15 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0006		; 06 --> command for shifting cursor right
+sw   r3, r1, 16			; store 06 in memory address of offset 16 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x8050		; 50 --> character 'P' and set the most signficant bit for the RS pin
+sw   r3, r1, 17			; store 'P' in memory address of offset 17 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0006		; 06 --> command for shifting cursor right
+sw   r3, r1, 18			; store 06 in memory address of offset 18 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x8041		; 41 --> character 'A' and set the most signficant bit for the RS pin
+sw   r3, r1, 19			; store 'A' in memory address of offset 19 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0006		; 06 --> command for shifting cursor right
+sw   r3, r1, 20			; store 06 in memory address of offset 20 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x8053		; 53 --> character 'S' and set the most signficant bit for the RS pin
+sw   r3, r1, 21			; store 'S' in memory address of offset 21 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0006		; 06 --> command for shifting cursor right
+sw   r3, r1, 22			; store 06 in memory address of offset 22 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x8053		; 53 --> character 'S' and set the most signficant bit for the RS pin
+sw   r3, r1, 23			; store 'S' in memory address of offset 23 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0006		; 06 --> command for shifting cursor right
+sw   r3, r1, 24			; store 06 in memory address of offset 24 + r1 
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x803A		; 3A --> character ':' and set the most signficant bit for the RS pin
+sw   r3, r1, 25			; store ' ' in memory address of offset 25 + r1
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x0006		; 06 --> command for shifting cursor right
+sw   r3, r1, 26			; store 06 in memory address of offset 26 + r1 
+
+
+sub  r1, r1, r1			; make r1 = 0 
+sub  r3, r3, r3			; make r3 = 0 
+addi r3, r3, 0x8020		; 20 --> character ' ' and set the most signficant bit for the RS pin
+sw   r3, r1, 27			; store ' ' in memory address of offset 27 + r1
+
+
+
+
+; 									** the loop beigns ** 
+;									----------------------
+
+sub  r1, r1, r1						; make r1 = 0 
+sub  r5, r5, r5						; make r5 = 0
+addi r1, r1, 27						; make r1 = 27   
+z0:
+beq  r1, r5, 27 					; when we finish all the commands and characters we end the loop
+
+sub  r3, r3, r3						; make r3 = 0 
+sub  r2, r2, r2						; make r2 = 0 
+sub  r4, r4, r4						; make r4 = 0 
+sub  r6, r6, r6						; make r6 = 0
+lw   r3, r5, 0						; load command from memory address of offset 0 + r1 
+andi r2, r3, 0x8000					; check for the RS bit
+
+; output for the rs pin
+;----------------------
+
+beq  r2, r6, 1			; if equal then its a command
+ori  r7, r7, 0x0100		; set the RS pin for data mood
+j z1
+andi r7, r7, 0xFEFF		; clear the RS pin for command mood
+
+z1:
+out  r7						; output the value of RS pin on pin number 8
+
+; data or command ouput
+;----------------------
+
+andi r7, r7, 0xFF00					
+andi r3 ,r3, 0x00FF					
+ori r7, r7, r3						; output the first 9-bits (cmnd | data) on the output port 
+out r7
+
+addi r4, r4, 2000					; make r4 = 2000       instruction'PC'=86
+
+;delay 100 micro second
+z3:
+beq  r4, r6, 2						; when r6 = r4 = 2000 end the delay loop
+addi r6, r6, 1						; r6 = r6 + 1
+j    z3 							; jump to the condition 'beq'
+
+; output for the enable pin 
+;--------------------------
+
+ori  r7, r7, 0x0200					; set the enable pin
+out  r7
+addi r4, r4, 20						; make r4 = 20       instruction'PC'=117
+;delay 1 micro second
+z2:
+beq  r4, r6, 2						; when r6 = r4 = 20 end the delay loop
+addi r6, r6, 1						; r6 = r6 + 1
+j    z2								; jump to the condition 'beq'
+sub  r6, r6, r6						; make r6 = 0
+
+andi r7, r7, 0xFDFF					; clear the enable pin
+out  r7
+;delay 1 micro second
+z3:
+beq  r4, r6, 2						; when r6 = r4 = 20 end the delay loop
+addi r6, r6, 1						; r6 = r6 + 1
+j    z2								; jump to the condition 'beq'
+
+
+
+
+addi r5, r5, 1						; increase r5
+j    z0 							; jump to the start of the big loop for a new cmnd/char
+
+
+
+
+
+
+
+; 									** Showing "****" for Password **
+;									---------------------------------
+
+; Using this code in Keypad loop
+;--------------------------------
+
+sub  r3, r3, r3						; make r3 = 0 
+addi r3, r3, 0x002A					; 2A --> character '*' and set the most signficant bit for the RS pin
+ori  r7, r7, 0x0100					; set the RS pin for data mood
+andi r7, r3, 0x00FF					; output the first 8-bits (cmnd | data) on the output port
+
+
+
+
+; output for the enable pin 
+;--------------------------
+
+ori  r7, r7, 0x0200		; set the enable pin
+addi r4, r4, 20						; make r4 = 20       instruction'PC'=117
+;delay 1 micro second
+beq  r4, r6, 2						; when r6 = r4 = 20 end the delay loop
+addi r6, r6, 1						; r6 = r6 + 1
+j    xxx							; jump to the condition 'beq'
+sub  r6, r6, r6						; make r6 = 0
+
+andi r7, r7, 0xFDFF		; clear the enable pin
+;delay 1 micro second
+beq  r4, r6, 2						; when r6 = r4 = 20 end the delay loop
+addi r6, r6, 1						; r6 = r6 + 1
+j    xxx							; jump to the condition 'beq'
+
+
+
+
+
+
+
+sub  r3, r3, r3						; make r3 = 0 
+addi r3, r3, 0x0006					; 06 --> command for shifting cursor right
+andi r7, r7, 0xFEFF					; reset the RS pin for command mood 
+andi r7, r3, 0x00FF					; output the first 8-bits (cmnd | data) on the output port
+
+;--------------------------------------
+
+
+; Printing floor on LCD :
+;-------------------------
+sub  r3, r3, r3						; make r3 = 0 
+addi r3,r3, FLOOR NUMBER
+addi r3,r3,0x0030
+ori  r7, r7, 0x0300		; set the RS pin for data mooqd and set Enable pin
+andi r7, r3, 0x00FF			; output the first 8-bits (cmnd | data) on the output port
+
+
+
+
+
+
+
+
+
+
+
+
+
